@@ -1,9 +1,7 @@
 #ДАНО: Робот находится в произвольной клетке ограниченного прямоугольного поля без внутренних перегородок и маркеров.
 #РЕЗУЛЬТАТ: Робот — в исходном положении в центре прямого креста из маркеров, расставленных вплоть до внешней рамки.
 
-using HorizonSideRobots
-OriginRobot = (animate = false, "1.sit")
-show!(OriginRobot)
+#r = Robot(animate = false, "1.sit")
 
 function putmarker(r,side)
     while isborder(r,side) == false
