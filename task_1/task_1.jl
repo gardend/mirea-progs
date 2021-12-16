@@ -3,7 +3,7 @@
 
 using HorizonSideRobots
 OriginRobot = (animate = false, "1.sit")
-show (OriginRobot)
+show!(OriginRobot)
 
 function putmarker(r,side)
     while isborder(r,side) == false
