@@ -9,7 +9,8 @@ function moves!(r,side,num)
         end
     end
 end
-function spiral(r,num)
+function spiral(r)
+    global num
     moves!(r,Nord,num)
     moves!(r,Ost,num)
     num += 1
@@ -19,9 +20,8 @@ function spiral(r,num)
 end
 
 function mfind(r)
-    num = 1
+    global num = 1
     while !ismarker(r)
-        spiral(r,num)
-        num += 2
+        spiral(r)
     end
 end
