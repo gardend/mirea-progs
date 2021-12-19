@@ -31,6 +31,32 @@ function putmarker(r,side)
     end
 end
 
+function obhod(r,side)
+    k = 0
+    while (isborder(r,side) && !isborder(r,next_side(side)))
+        move!(r,next_side(side))
+        k += 1
+    end
+    if isborder(r,next_side(side))&&isborder(r,side)
+        for i in 1:k
+            move!(r,reverse(next_side(side)))
+        end
+        return 0
+    end
+    if !isborder(r,side)
+        move!(r,side)
+    end
+    if k != 0
+        while isborder(r,reverse(next_side(side)))
+            move!(r,side)
+        end
+        for i in 1:k
+            move!(r,reverse(next_side(side)))
+        end
+    end
+    return 1
+end
+
 function up(r)
     if isborder(r,Nord) == false
         move!(r,Nord)
