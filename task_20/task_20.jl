@@ -18,7 +18,7 @@ end
 
 function num_vert(r)
     ugol(r, West, Sud)
-    n = 1
+    n = 0
     flag = 1
     while !isborder(r, Nord)
         while !isborder(r, Ost)
@@ -33,5 +33,5 @@ function num_vert(r)
         move!(r, Nord)
         kray(r,West)
     end
-print(n-1)
+print(n)
 end
