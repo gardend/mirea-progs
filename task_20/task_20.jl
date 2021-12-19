@@ -10,12 +10,6 @@ function ugol(r,side1,side2)
     end
 end
 
-function kray(r,side) #функция перемещает робота к краю
-    while isborder(r,side) == false
-        move!(r,side)
-    end
-end 
-
 function num_vert(r)
     ugol(r, West, Sud)
     n = 0
