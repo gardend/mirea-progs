@@ -56,7 +56,7 @@ function obhod(r,side)
     return 1
 end
 
-function num_vert(r)
+function num_pr(r)
     ugol(r, West, Sud)
     n = 0 
     flag = 1
