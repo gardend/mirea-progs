@@ -24,6 +24,22 @@ function back(r, side)
     end
 end
 
+function reverse(side)
+    for i=0:3
+        if side == HorizonSide(i)
+            return HorizonSide(mod(i+2, 4))
+        end
+    end
+end
+
+function next_side(side)
+    for i=0:3
+        if side == HorizonSide(i)
+            return HorizonSide(mod(i+3,4))
+        end
+    end
+end
+
 function obhod(r,side)
     k = 0
     while (isborder(r,side) && !isborder(r,next_side(side)))
