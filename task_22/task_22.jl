@@ -1,6 +1,6 @@
 #Подсчитать число прямоугольных перегородок (отрезков нет)
 
-function ugol(r,side1,side2)
+function ugol(r,side1,side2) #функция ведет робота в угол side1 side2
     while !isborder(r,side1) || !isborder(r,side2)
         if !isborder(r,side1)
             move!(r,side1)
@@ -10,7 +10,7 @@ function ugol(r,side1,side2)
     end
 end
 
-function back(r, side)
+function back(r, side)#функция возвращает робота в начало строки в side
     c = 1
     while c != 0
         if !isborder(r, side)
@@ -40,7 +40,7 @@ function next_side(side)
     end
 end
 
-function obhod(r,side)
+function obhod(r,side)#функция обходит перегородки чтобы идти по прямой
     k = 0
     while (isborder(r,side) && !isborder(r,next_side(side)))
         move!(r,next_side(side))
